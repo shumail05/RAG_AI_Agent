@@ -13,9 +13,9 @@ services:
       - key: PINECONE_API_KEY
         fromEnvironment: true
       - key: PINECONE_ENVIRONMENT
-        fromEnvironment: true
+        value: us-east-1
       - key: PINECONE_INDEX_NAME
-        fromEnvironment: true
+        value: rag-index
       - key: TAVILY_API_KEY
         fromEnvironment: true
       - key: JINA_API_KEY

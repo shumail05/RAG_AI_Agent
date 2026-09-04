@@ -11,7 +11,7 @@ langchain-openai
 langchain-pinecone
 langchain-tavily
 langgraph
-pinecone-client
+pinecone
 pypdf
 langchain-google-genai
 langchain-groq
