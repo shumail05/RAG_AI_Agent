@@ -74,7 +74,7 @@ RAG_AI_Agent/
 ### Installation
 
 ```bash
-git clone https://github.com/your-username/RAG_AI_Agent.git
+git clone https://github.com/shumail05/RAG_AI_Agent.git
 cd RAG_AI_Agent
 
 uv venv
