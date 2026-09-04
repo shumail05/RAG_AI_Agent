@@ -12,10 +12,11 @@ from langchain_core.embeddings import Embeddings
 from config import PINECONE_API_KEY, JINA_API_KEY
 
 # Set environment variables for Pinecone
-os.environ["PINECONE_API_KEY"] = PINECONE_API_KEY
+if PINECONE_API_KEY:
+    os.environ["PINECONE_API_KEY"] = PINECONE_API_KEY
 
 # Initialize Pinecone client
-pc = Pinecone(api_key=PINECONE_API_KEY)
+pc = Pinecone(api_key=PINECONE_API_KEY) if PINECONE_API_KEY else None
 
 # Define Pinecone index name
 INDEX_NAME = "rag-index"
@@ -66,7 +67,11 @@ class JinaApiEmbeddings(Embeddings):
         result = self._embed([text])
         return result[0] if result else []
 
-embeddings = JinaApiEmbeddings(api_key=JINA_API_KEY)
+if JINA_API_KEY:
+    embeddings = JinaApiEmbeddings(api_key=JINA_API_KEY)
+else:
+    print("WARNING: JINA_API_KEY not set. Embeddings will fail.")
+    embeddings = None
 
 def get_retriever(namespace: Optional[str] = None):
     """

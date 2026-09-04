@@ -66,7 +66,7 @@ class RagJudge(BaseModel):
 
 # --- GROQ LLM SETUP WITH 3-MODEL FALLBACK ---
 if not GROQ_API_KEY:
-    raise ValueError("GROQ_API_KEY is missing in environment variables.")
+    print("WARNING: GROQ_API_KEY is missing in environment variables.")
 
 os.environ["GROQ_API_KEY"] = GROQ_API_KEY
 
