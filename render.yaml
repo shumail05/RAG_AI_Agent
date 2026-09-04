@@ -3,10 +3,11 @@ services:
     name: rag-agent-backend
     runtime: python
     build:
-      filePath: backend/requirements.txt
+      command: pip install -r backend/requirements.txt
     start:
-      path: backend
-      command: uvicorn main:app --host 0.0.0.0 --port $PORT
+      command: cd backend && uvicorn main:app --host 0.0.0.0 --port $PORT
+    healthCheck:
+      path: /health
     envVars:
       - key: GROQ_API_KEY
         fromEnvironment: true
@@ -20,6 +21,4 @@ services:
         fromEnvironment: true
       - key: JINA_API_KEY
         fromEnvironment: true
-    healthCheck:
-      path: /health
     autoDeploy: true
