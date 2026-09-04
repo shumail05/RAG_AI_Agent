@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: rag-agent-backend
+    runtime: python
+    build:
+      filePath: backend/requirements.txt
+    start:
+      path: backend
+      command: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: GROQ_API_KEY
+        fromEnvironment: true
+      - key: PINECONE_API_KEY
+        fromEnvironment: true
+      - key: PINECONE_ENVIRONMENT
+        fromEnvironment: true
+      - key: PINECONE_INDEX_NAME
+        fromEnvironment: true
+      - key: TAVILY_API_KEY
+        fromEnvironment: true
+      - key: JINA_API_KEY
+        fromEnvironment: true
+    healthCheck:
+      path: /health
+    autoDeploy: true
