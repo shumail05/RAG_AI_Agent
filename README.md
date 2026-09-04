@@ -1,6 +1,12 @@
 # RAG AI Agent
 
+[![Frontend](https://img.shields.io/badge/Frontend-Live%20Demo-blue?logo=githubpages)](https://shumail05.github.io/RAG_AI_Agent/)
+[![Backend](https://img.shields.io/badge/Backend-Live%20on%20Render-orange?logo=render)](https://rag-agent-ng97.onrender.com/health)
+
 A sophisticated AI Agent application that answers user queries by intelligently leveraging both a private knowledge base (using Retrieval-Augmented Generation - RAG) and real-time web search, with a transparent agent trace workflow.
+
+- **Live Demo**: [https://shumail05.github.io/RAG_AI_Agent/](https://shumail05.github.io/RAG_AI_Agent/)
+- **API**: [https://rag-agent-ng97.onrender.com](https://rag-agent-ng97.onrender.com)
 
 ---
 
